@@ -1,0 +1,16 @@
+<h1>メッセージ 編集</h1>
+
+<div>
+  <%= form_with model: @message, local: true do |f| %>
+    <div>
+      <%= f.label :name, "タイトル" %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :content, "内容" %>
+      <%= f.text_field :content %>
+    </div>
+    <%= f.submit "送信" %>
+  <% end %>
+</div>
+<%= link_to '一覧画面へ', messages_path %>

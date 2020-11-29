@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :find_message_id, only: [:show]
+  before_action :find_message_id, only: [:show, :edit, :update]
   def new
     @message = Message.new
   end
@@ -18,6 +18,17 @@ class MessagesController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @message.update(message_params)
+      redirect_to messages_url
+    else
+      render :edit
+    end
   end
 
   private
