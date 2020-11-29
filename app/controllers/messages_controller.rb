@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :find_message_id, only: [:show, :edit, :update]
+  before_action :find_message_id, only: [:show, :edit, :update, :destroy]
   def new
     @message = Message.new
   end
@@ -29,6 +29,11 @@ class MessagesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @message.destroy
+    redirect_to messages_url
   end
 
   private
