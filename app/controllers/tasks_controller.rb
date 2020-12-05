@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
     def index
-        @tasks = Task.select(:title)
+        @tasks = Task.all
     end
     def new
         @task = Task.new
@@ -10,6 +10,10 @@ class TasksController < ApplicationController
     def create
         Task.create(task_params)
         redirect_to tasks_path
+    end
+
+    def show
+        @tasks = Task.find(params[:id])
     end
 
     private
