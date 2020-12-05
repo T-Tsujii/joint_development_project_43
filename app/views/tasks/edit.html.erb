@@ -1,0 +1,13 @@
+<h1>タスク 編集</h1>
+<%= form_with model: @task, local: true do |form| %>
+  <div>
+  <%= form.label :title, 'タイトル' %>
+  <%= form.text_field :title %>
+  </div>
+  <div>
+  <%= form.label :title, '内容' %>
+  <%= form.text_field :content %>
+  </div>
+<%= form.submit '送信' %>
+<% end %>
+<%= link_to '一覧画面へ', tasks_path, class:"to-index" %>
