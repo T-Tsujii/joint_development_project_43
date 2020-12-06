@@ -1,6 +1,6 @@
-<h1>タスク　詳細</h1>
+<h1>タスク 詳細</h1>
 <div>
-<p>タイトル：<%= @tasks.title %></p>
-<p>内容：<%= @tasks.content %></p>
+<p>タイトル: <%= @tasks.title %></p>
+<p>内容: <%= @tasks.content %></p>
 </div>
-<%= link_to '投稿画面へ', tasks_path(@tasks.id) %>
+<%= link_to '一覧画面へ', tasks_path(@tasks.id), class:"line-bottom" %>
